@@ -8,13 +8,13 @@ const _ = require('lodash');
 const config = require('./config');
 const commands = require('./slashCmds');
 const helpCommand = require('./slashCmds/help');
-const slackapi = require('./tictactoe');
+const slackapi = require('./slackApiProcess');
 
 
 let app = express();
 
 //checks slack authorization token
-slackapi.checkSlackAPI();
+slackapi.checkSlackApi();
 
 
 var globalTicTacToeObject = {};

@@ -6,7 +6,7 @@ const config = require('./config')
 var teamUsersList = {};
 
 // ========= Authentication=========
-function checkSlackAPI(){
+function checkSlackApi(){
     if (config('SLACK_API_TOKEN')){
         slack.auth.test({ token: config('SLACK_API_TOKEN')}, function(err,data){
             if (err != null){
@@ -72,6 +72,6 @@ function checkForUser(payload, opponent){
 }
 
 module.exports.slack = slack;
-module.exports.checkSlackAPI = checkSlackAPI;
+module.exports.checkSlackApi = checkSlackApi;
 module.exports.checkForUser = checkForUser;
 module.exports.getTeamUserList = getTeamUserList;
