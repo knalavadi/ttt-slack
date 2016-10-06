@@ -18,8 +18,8 @@ const gameCellFill = {
 };
 
 const gameCellFillSymbols = {
-    X: 'X',
-    O: 'O',
+    X: ' X',
+    O: ' O',
     EMPTY: '---'
 };
 
@@ -157,7 +157,7 @@ function move(payload, currentGame, rowIn, columnIn){
 //returns the current status of the game and draws the board from each turn 
 function getCurrentStatus(currentGame){
     return 'It is ' + currentGame.activePlayer + '\'s turn in the game ' +
-        'between ' + currentGame.username1 + ' (X) and ' + currentGame.username2 + ' (O)' +
+        'between ' + currentGame.username1 + ' (❌) and ' + currentGame.username2 + ' (⭕️)' +
         drawCurrentBoard(currentGame);
 }
 
@@ -191,11 +191,11 @@ function returnTextForGameWinOrTieStatus(currentGame){
     switch(currentGame.gameStatus){
         case gameStatus.PLAYER1_WINNER:
             currentGame.finished = true;
-            statusString = '\nCongrats!'  + currentGame.username1 + 'won the game';
+            statusString = '\nCongrats!'  + currentGame.username1 + ' won the game 🌟 ';
             break;
         case gameStatus.PLAYER2_WINNER:
             currentGame.finished = true;
-            statusString =  '\nCongrats! ' + currentGame.username2 + 'won the game';
+            statusString =  '\nCongrats! ' + currentGame.username2 + ' won the game 🌟 ';
             break;
         case gameStatus.TIE:
             currentGame.finished = true;
