@@ -40,7 +40,7 @@ const handler = (globalTicTacToeObject, payload, res) => {
     }
     else
     {
-        attachmentsText = 'theres no longer an active game in this channel, start a new one!';
+        slackchatText = 'theres no longer an active game in this channel, start a new one!';
     }
 
     var attachments = [
