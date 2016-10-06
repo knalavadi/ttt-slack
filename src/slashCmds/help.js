@@ -7,7 +7,7 @@ const config = require('../config')
 
 const msgDefaults = {
   response_type: 'in_channel',
-  username: '⭕️ tictactoe ❌',
+  username: 'ttt',
 }
 
 let attachments = [

@@ -9,7 +9,7 @@ const slack = require('../slackApiProcess');
 
 const msgDefaults = {
   response_type: 'in_channel',
-  username: '⭕️ tictactoe ❌',
+  username: 'ttt',
 }
 
 const handler = (globalTicTacToeObject, payload, res) => {
@@ -51,7 +51,7 @@ const handler = (globalTicTacToeObject, payload, res) => {
 
     var attachments = [
         {
-            title: '⭕️ tictactoe ❌',
+            title: 'ttt',
             color: '#FFC300',
             text: slackchatText,
             mrkdwn_in: ['text']
