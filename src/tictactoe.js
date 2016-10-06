@@ -236,7 +236,7 @@ function rowWinner(currentGame){
 
     while(rowCount < currentGame.boardSize)
     {
-        var colCount = 0;
+        var columnCount = 0;
 
         var rowTotal = 0;
 
@@ -272,15 +272,15 @@ function columnWinner(currentGame){
     
     var columnCount = 0;
 
-    while(colCount < currentGame.boardSize)
+    while(columnCount < currentGame.boardSize)
     {
         // x winner 3 == 3 
-        if(sumColArray[colCount] == currentGame.boardSize){
+        if(sumColArray[columnCount] == currentGame.boardSize){
             currentGame.gameStatus = gameStatus.PLAYER1_WINNER;
             break;
         }
         // O winner 3 == -(-3)
-        else if(sumColArray[colCount] == -currentGame.boardSize){
+        else if(sumColArray[columnCount] == -currentGame.boardSize){
             currentGame.gameStatus = gameStatus.PLAYER2_WINNER;
             break;
         }
