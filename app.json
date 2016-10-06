@@ -1,0 +1,26 @@
+{
+  "name": "tictactoe-slack",
+  "description": "Tictactoe game to use with Slack slash command",
+  "repository": "https://github.com/spickering-git/tictactoe",
+  "success_url": "/",
+  "env": {
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "TICTACTOE_COMMAND_TOKEN": {
+      "description": "Slash command token, for the tictactoe command endpoint, create a slash command in Slack and copy the token here",
+      "required": true
+    },
+    "SLACK_API_TOKEN": {
+      "description": "Slack WEB API token, only works with TEST token from slack so far",
+      "required": false
+    },
+    "SLACK_TOKEN": {
+      "description": "Slack bot RTM API token, this is so far just used for testing the bot functionality",
+      "required": false
+    },
+    
+    "NODE_ENV": "staging"
+  },
+  "image": "heroku/nodejs"
+}
