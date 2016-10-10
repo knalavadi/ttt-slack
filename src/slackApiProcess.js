@@ -6,13 +6,6 @@ const config = require('./config')
 var teamUsersList = {};
 
 
-var http = require("http");
-setInterval(function() {
-    http.get("http://<your app name>.herokuapp.com");
-}, 300000); // every 5 minutes (300000)
-
-
-
 // ========= Authentication=========
 function checkSlackApi(){
     if (config('SLACK_API_TOKEN')){
