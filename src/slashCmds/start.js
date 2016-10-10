@@ -35,8 +35,10 @@ const handler = (globalTicTacToeObject, payload, res) => {
     else
     {
         let opponent_raw = tokens[1];
+        console.log(opponent_raw)
         let opponent_split = opponent_raw.split("@")
         let opponent = opponent_split[1]
+        console.log(opponent)
 
         if(slack.checkForUser(payload, opponent, globalTicTacToeObject)) {
 
