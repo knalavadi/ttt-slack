@@ -41,15 +41,6 @@ app.post('/commands/ttt', (req, res) => {
     return
   }
 
-
-// prevents app from sleeping 
-  var http = require("http");
-    setInterval(function() {
-    http.get("http://ttt-slackv2.herokuapp.com");
-  }, 300000); // every 5 minutes (300000)
-
-
-
   // handler for slash commands 
   let cmd = _.reduce(commands, (a, cmd) => {
     return payload.text.match(cmd.pattern) ? cmd : a
