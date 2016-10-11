@@ -72,7 +72,7 @@ function checkForUser(payload, opponent){
 }
 
 
-// ===========direct channel 
+// ===========direct channel =========
     var userFound = true;
 
     if (teamUsersList != null) {
@@ -83,7 +83,7 @@ function checkForUser(payload, opponent){
                     token: config('SLACK_API_TOKEN'),
                     channel: payload.group_id
                 }, function (err, data) {
-
+                    console.log("made it here")
                     var indexVal = data.group.members.indexOf(teamUsersList[opponent]);
 
                     if(indexVal >= 0){
