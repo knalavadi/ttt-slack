@@ -70,7 +70,7 @@ function checkForUser(payload, opponent){
     return userFound;
 
 
-}
+
 // ===========direct channel 
     var userFound = true;
 
@@ -106,6 +106,7 @@ function checkForUser(payload, opponent){
 
 
 }
+
 module.exports.slack = slack;
 module.exports.checkSlackApi = checkSlackApi;
 module.exports.checkForUser = checkForUser;
