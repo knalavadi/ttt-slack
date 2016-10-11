@@ -41,7 +41,7 @@ function checkForUser(payload, opponent){
 
     if (teamUsersList != null) {
         if (teamUsersList[opponent] != null) {
-            if slack.channel != undefined
+            if (slack.channel != undefined){
 
                 slack.channels.info({
                     token: config('SLACK_API_TOKEN'),
@@ -69,7 +69,7 @@ function checkForUser(payload, opponent){
     }
 
     return userFound;
-
+}
 
 
 // ===========direct channel 
@@ -77,7 +77,7 @@ function checkForUser(payload, opponent){
 
     if (teamUsersList != null) {
         if (teamUsersList[opponent] != null) {
-            if slack.group != undefined
+            if (slack.group != undefined){
 
                 slack.groups.info({
                     token: config('SLACK_API_TOKEN'),
@@ -107,6 +107,7 @@ function checkForUser(payload, opponent){
     return userFound;
 
 
+}
 }
 
 module.exports.slack = slack;
