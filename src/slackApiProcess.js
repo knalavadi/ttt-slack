@@ -77,7 +77,7 @@ function checkForUser(payload, opponent){
 
     if (teamUsersList != null) {
         if (teamUsersList[opponent] != null) {
-            if (slack.group != undefined){
+            if (slack.groups != undefined){
 
                 slack.groups.info({
                     token: config('SLACK_API_TOKEN'),
