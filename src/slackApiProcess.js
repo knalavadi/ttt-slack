@@ -71,7 +71,41 @@ function checkForUser(payload, opponent){
 
 
 }
+// ===========direct channel 
+    var userFound = true;
 
+    if (teamUsersList != null) {
+        if (teamUsersList[opponent] != null) {
+
+                slack.groups.info({
+                    token: config('SLACK_API_TOKEN'),
+                    channel: payload.group_id
+                }, function (err, data) {
+
+                    var indexVal = data.group.members.indexOf(teamUsersList[opponent]);
+
+                    if(indexVal >= 0){
+                        userFound = true;
+                    }
+                    else{
+                        userFound = false;
+                    }
+
+                });
+
+        }
+        else {
+            userFound = false;
+        }
+    }
+    else {
+        userFound = true;
+    }
+
+    return userFound;
+
+
+}
 module.exports.slack = slack;
 module.exports.checkSlackApi = checkSlackApi;
 module.exports.checkForUser = checkForUser;
