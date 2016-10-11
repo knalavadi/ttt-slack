@@ -41,22 +41,22 @@ function checkForUser(payload, opponent){
 
     if (teamUsersList != null) {
         if (teamUsersList[opponent] != null) {
-            if (slack.channel != undefined){
+            
 
                 slack.channels.info({
                     token: config('SLACK_API_TOKEN'),
                     channel: payload.channel_id
                 }, function (err, data) {
+                    if (slack.channel != undefined){
+                        var indexVal = data.channel.members.indexOf(teamUsersList[opponent]);
 
-                    var indexVal = data.channel.members.indexOf(teamUsersList[opponent]);
-
-                    if(indexVal >= 0){
-                        userFound = true;
+                        if(indexVal >= 0){
+                            userFound = true;
+                        }
+                        else{
+                            userFound = false;
+                        }
                     }
-                    else{
-                        userFound = false;
-                    }
-
                 });
 
         }
@@ -69,7 +69,7 @@ function checkForUser(payload, opponent){
     }
 
     return userFound;
-}
+
 
 
 // ===========direct channel =========
@@ -77,22 +77,23 @@ function checkForUser(payload, opponent){
 
     if (teamUsersList != null) {
         if (teamUsersList[opponent] != null) {
-            if (slack.groups != undefined){
+
 
                 slack.groups.info({
                     token: config('SLACK_API_TOKEN'),
                     channel: payload.group_id
                 }, function (err, data) {
-                    console.log("made it here")
-                    var indexVal = data.group.members.indexOf(teamUsersList[opponent]);
+                    if (slack.groups != undefined){
+                        console.log("made it here")
+                        var indexVal = data.group.members.indexOf(teamUsersList[opponent]);
 
-                    if(indexVal >= 0){
-                        userFound = true;
+                        if(indexVal >= 0){
+                            userFound = true;
+                        }
+                        else{
+                            userFound = false;
+                        }
                     }
-                    else{
-                        userFound = false;
-                    }
-
                 });
 
         }
@@ -106,8 +107,6 @@ function checkForUser(payload, opponent){
 
     return userFound;
 
-
-}
 }
 
 module.exports.slack = slack;
