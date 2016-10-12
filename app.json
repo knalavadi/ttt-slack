@@ -1,14 +1,13 @@
 {
   "name": "tictactoe-slack",
   "description": "Tictactoe game to use with Slack slash command",
-  "repository": "https://github.com/spickering-git/tictactoe",
   "success_url": "/",
   "env": {
     "HEROKU_APP_NAME": {
       "required": true
     },
     "TICTACTOE_COMMAND_TOKEN": {
-      "description": "Slash command token, for the tictactoe command endpoint, create a slash command in Slack and copy the token here",
+      "description": "Slash command token, for the tictactoe command endpoint",
       "required": true
     },
     "SLACK_API_TOKEN": {
