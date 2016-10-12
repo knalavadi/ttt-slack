@@ -25,7 +25,7 @@ const handler = (globalTicTacToeObject, payload, res) => {
         let currentGame = gameList[payload.channel_id];
 
         slackchatText =   'there is already has an active game' +
-          ' between ' + currentGame.username1 + ' and ' + currentGame.username2 + 'Continue playing (/ttt move row column) or quit (/ttt quit)'+
+          ' between ' + currentGame.username1 + ' and ' + currentGame.username2 + '. Continue playing (/ttt move row column) or quit (/ttt quit)'+
           '\n A channel can only have one game being played at a time.';
     }
     else if(tokens.length < 2)
