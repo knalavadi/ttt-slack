@@ -1,0 +1,16 @@
+{
+  "name": "ttt-slack",
+  "success_url": "/",
+  "env": {
+    "TICTACTOE_COMMAND_TOKEN": {
+      "description": "Slash command token",
+      "required": true
+    },
+    "SLACK_API_TOKEN": {
+      "description": "Slack test web API token",
+      "required": true
+    },
+    "NODE_ENV": "staging"
+  },
+
+}
